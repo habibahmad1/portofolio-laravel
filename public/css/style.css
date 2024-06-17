@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Lilita+One&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: #ff9447;
+    color: #fff;
+}
+
+body {
+    background-color: white;
+    font-family: "Concert One", sans-serif;
+}
+
+nav {
+    background: #212121;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 70px;
+}
+
+.container-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    line-height: 70px;
+}
+
+nav ul {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    color: #fff;
+    font-size: 18px;
+    list-style-type: none;
+    margin: 0 20px;
+    user-select: none;
+}
+
+nav ul li:hover,
+#login:hover,
+.container-sidebar ul li:hover,
+.listFooter a:hover {
+    cursor: pointer;
+    color: #ff9447;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#titleNav {
+    font-size: 26px;
+    font-family: "Lilita One", sans-serif;
+}
+
+/* Burger Button */
+.buttonNav {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.buttonNav.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
+}
+
+.buttonNav.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.buttonNav.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+.buttonNav span {
+    background: #fff;
+    margin: 3px 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 22px;
+    transition: all 0.5s ease;
+}
+/* sidebar */
+.container-sidebar {
+    width: 70%;
+    height: 100vh;
+    max-width: 450px;
+    background-color: #212121;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 24px;
+    transition: 0.7s ease;
+    padding-top: 100px;
+}
+
+.container-sidebar ul li {
+    list-style-type: none;
+    color: #fff;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.container-sidebar a {
+    text-decoration: none;
+}
+
+.container-sidebar.active {
+    right: 0;
+}
+
+/* CSS Footer */
+.container-footer {
+    background-color: #212121;
+    padding: 200px;
+    color: #ff9447;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.listFooter {
+    display: flex;
+    flex-direction: column;
+}
+
+.listFooter a {
+    padding: 20px 0;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Index Page CSS */
+.titleIntro {
+    font-size: 38px;
+    color: #ff9447;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff9447, #f347ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.hero section:nth-child(1) {
+    margin: 50px;
+    text-align: justify;
+}
+
+.hero section:first-of-type a {
+    text-decoration: none;
+    background-color: #ff9447;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    color: #212121;
+    transition: all 0.3s;
+}
+
+.hero section:first-of-type a:first-of-type:hover,
+.about section:first-of-type a:hover {
+    background-color: #212121;
+    color: #fff;
+    transform: scale(0.96);
+}
+
+.hero section:first-child a:nth-of-type(2) {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.hero section img {
+    width: 400px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.hero section p {
+    margin-top: 10px;
+    color: #747474;
+}
+
+/* About */
+.about {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.about section:first-of-type {
+    margin: 50px;
+}
+
+.about section:first-of-type p {
+    text-align: justify;
+}
+
+.about section:first-of-type a {
+    float: right;
+    padding: 5px 20px;
+    background-color: #ff9447;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #212121;
+    margin: 10px 0;
+    transition: all 0.3s;
+}
+
+.about section img {
+    width: 400px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.about section:nth-of-type(2) {
+    order: -1;
+}
+
+/* About */
+.contact {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    flex-direction: column;
+}
+
+.fullname,
+.email,
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.fullname label,
+.email label,
+.message label {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+input {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 22px;
+}
+
+textarea {
+    width: 400px;
+    height: 80px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+#sendmessage {
+    background-color: #ff9447;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+    margin: 40px 0;
+}
+
+/* responsive Hp */
+@media (max-width: 645px) {
+    .container-navbar {
+        display: none;
+    }
+
+    .buttonNav {
+        display: flex;
+    }
+
+    .container-footer {
+        padding: 140px 0;
+    }
+
+    .hero {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .hero section img {
+        width: 100%;
+    }
+    .hero section {
+        width: 100%;
+    }
+    .hero section:nth-child(1) {
+        margin: 10px;
+        text-align: center;
+    }
+    .hero section:nth-child(1) p {
+        text-align: justify;
+    }
+    .hero section:nth-child(2) {
+        order: -1;
+        margin: 0 0 20px 0;
+    }
+    .about {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .about section img {
+        width: 100%;
+    }
+    .about section {
+        width: 100%;
+    }
+    .about section:nth-child(1) {
+        margin: 10px;
+        text-align: center;
+    }
+    .about section:nth-child(1) p {
+        text-align: justify;
+    }
+    .about section:nth-child(2) {
+        margin: 0 0 20px 0;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        padding: 0 5px;
+        font-size: 20px;
+    }
+    textarea {
+        font-size: 20px;
+        width: 100%;
+    }
+    #sendmessage {
+        transform: scale(0.6);
+        margin: 0;
+    }
+}
