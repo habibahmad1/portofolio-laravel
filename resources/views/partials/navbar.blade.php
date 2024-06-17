@@ -14,8 +14,8 @@
         </div>
         <ul>
             <a href="#home"><li>Home</li></a>
-            <a href="#home"><li>About</li></a>
-            <a href="#home"><li>Contact</li></a>
+            <a href="#about"><li>About</li></a>
+            <a href="#contact"><li>Contact</li></a>
         </ul>
         <a href="https://dribbble.com/HabibAhmad" id="login" style="font-size: 18px" target="_blank">Hire Me <i class="fa-solid fa-briefcase"></i></a>
     </div>

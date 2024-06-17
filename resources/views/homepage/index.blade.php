@@ -1,6 +1,6 @@
 @extends('partials.main')
 @section('content')
-    <div class="hero" id="#home">
+    <div class="hero" id="home">
         <section>
             <h1 class="titleIntro">Habib Ahmad</h1>
             <h3>Web Developer | UI UX Design</h3>
@@ -14,7 +14,7 @@
         </section>
     </div>
 
-    <div class="about">
+    <div class="about" id="about">
         <section>
             <h1 class="titleIntro">About Me</h1>
             <h3>Web Developer | UI UX Design</h3>
@@ -27,7 +27,7 @@
         </section>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <h1 class="titleIntro">Contact Me</h1>
         <div class="fullname">
             <label for="#fullname">Fullname <span style="color: #fa1872">*</span></label>
