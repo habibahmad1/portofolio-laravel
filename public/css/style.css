@@ -183,7 +183,8 @@ nav a {
 }
 
 .hero section:first-of-type a:first-of-type:hover,
-.about section:first-of-type a:hover {
+.about section:first-of-type a:hover,
+#sendmessage:hover {
     background-color: #212121;
     color: #fff;
     transform: scale(0.96);
@@ -200,7 +201,8 @@ nav a {
     border-bottom-left-radius: 50%;
 }
 
-.hero section p {
+.hero section p,
+.about section p {
     margin-top: 10px;
     color: #747474;
 }
@@ -293,7 +295,9 @@ textarea {
     font-size: 22px;
     cursor: pointer;
     color: #fff;
-    margin: 40px 0;
+    margin: 40px auto;
+    display: block;
+    transition: 0.3s ease-in-out;
 }
 
 /* responsive Hp */
@@ -372,7 +376,6 @@ textarea {
         width: 100%;
     }
     #sendmessage {
-        transform: scale(0.6);
-        margin: 0;
+        transform: scale(0.7);
     }
 }
