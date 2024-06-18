@@ -44,17 +44,19 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Contact $contact)
+    public function show(Contact $contact, $name)
     {
-        //
+        $contact = Contact::where('name', $name)->firstOrFail();
+        return view('homepage.detail', compact("contact"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contact $contact)
+    public function edit(Contact $contact, $name)
     {
-        //
+        $contact = Contact::where('name', $name)->firstOrFail();
+        return view('homepage.edit', compact("contact"));
     }
 
     /**
@@ -62,7 +64,9 @@ class ContactController extends Controller
      */
     public function update(UpdateContactRequest $request, Contact $contact)
     {
-        //
+        $contact->update($request->validated());
+
+        return redirect('/')->with('success', 'updated successfully');
     }
 
     /**
@@ -70,6 +74,8 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+
+        return redirect()->back()->with('success', 'Deleted Successfull');
     }
 }

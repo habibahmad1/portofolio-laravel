@@ -56,5 +56,21 @@
             </div>
             <button type="submit" id="sendmessage">Send Message</button>
         </form>
+
+        <div class="messageContact">
+            @foreach ($contact as $item)
+                <p>Name: {{ $item["name"] }}</p>
+                <p>Email: {{ $item["email"] }}</p>
+                <p>Message: {{ $item["message"] }}</p>
+                <a href="{{ route('contact.show', $item->name) }}">detail</a>
+                <a href="{{ route('contact.edit', $item->name) }}">edit</a>
+                <form action="{{ route('contact.destroy', $item->id) }}" method="POST">
+                @method('delete')
+                @csrf
+                    <button type="submit" onclick="return confirm('delete?')">Delete</button>
+                </form>
+                <br>
+            @endforeach
+        </div>
     </div>
 @endsection
