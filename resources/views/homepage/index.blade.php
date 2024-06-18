@@ -1,5 +1,8 @@
 @extends('partials.main')
 @section('content')
+@if(session('success'))
+    <div>{{ session('success') }}</div>
+@endif
     <div class="hero" id="home">
         <section>
             <h1 class="titleIntro">Habib Ahmad</h1>
@@ -28,19 +31,28 @@
 
     <div class="contact" id="contact">
         <h1 class="titleIntro">Contact Me</h1>
-        <form action="">
-
+        <form action="{{ route('contact.submit') }}" method="POST">
+            @csrf
             <div class="fullname">
                 <label for="#fullname">Fullname <span style="color: #fa1872">*</span></label>
-                <input type="text" id="fullname" placeholder="Your Name" required>
+                <input type="text" id="fullname" placeholder="Your Name" name="name" required value="{{ old('name') }}">
+                @error('name')
+                    <div>{{ $message }}</div>
+                @enderror
             </div>
             <div class="email">
                 <label for="#email">Email <span style="color: #fa1872">*</span></label>
-                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="email" id="email" placeholder="Your Email" name="email" required value="{{ old('email') }}">
+                @error('email')
+                    <div>{{ $message }}</div>
+                @enderror
             </div>
             <div class="message">
                 <label for="#message">Message <span style="color: #fa1872">*</span></label>
-                <textarea name="message" id="message" placeholder="Write Messages" required></textarea>
+                <textarea name="message" id="message" placeholder="Write Messages" required value="{{ old('message') }}"></textarea>
+                @error('message')
+                    <div>{{ $message }}</div>
+                @enderror
             </div>
             <button type="submit" id="sendmessage">Send Message</button>
         </form>
